@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Book;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
@@ -22,6 +23,12 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("장현석");
+
+            em.persist(book);
 
             tx.commit(); //정상적이면 commit, DB에 저장되는 시점
         } catch (Exception e) {
