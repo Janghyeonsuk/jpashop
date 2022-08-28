@@ -24,12 +24,6 @@ public class JpaMain {
 
         try {
 
-            Book book = new Book();
-            book.setName("JPA");
-            book.setAuthor("장현석");
-
-            em.persist(book);
-
             tx.commit(); //정상적이면 commit, DB에 저장되는 시점
         } catch (Exception e) {
             tx.rollback(); //예외 발생시 롤백
